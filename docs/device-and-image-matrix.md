@@ -28,7 +28,7 @@ A similar brand name or the presence of a MediaTek processor does not make boot,
 
 "Vanilla" describes a GSI without bundled Google applications. It does not mean that the image is a device-specific TB350 build.
 
-LineageOS 23 / Android 16 GSIs are maintained by more than one builder. The TrebleDroid-based `lineage_treble` releases and Andy Yan's builds were both updated in June 2026; Andy Yan's 23.x images are published in an EROFS (`bgNE`) and an ext4 (`bgN4`) variant, and the correct variant for the TB350 has not been established.
+LineageOS 23 / Android 16 GSIs are maintained by more than one builder. The TrebleDroid-based `lineage_treble` releases (updated June 2026) and the `MisterZtr/LineageOS_gsi` releases (updated 24 May 2026) both publish vanilla and GApps variants; MisterZtr additionally splits each into ext4 and EROFS filesystem images. Only the vanilla variants fit the Google-free goal, and the correct variant for the TB350 has not been established.
 
 ## Community-reported TB350 data
 

@@ -80,10 +80,10 @@ Create a separate, reviewed installation document containing exact commands, exp
 Android 16 testing follows a successful Android 15 baseline. Research recorded on 16 August 2026 indicates that the option is viable in principle, though nothing has been proven on a project device:
 
 - Google publishes official Android 16 GSIs, with stable builds through Android 16 QPR2. Google's stated baseline for any GSI is a fully Treble-compliant device that launched with Android 9 (API level 28) or later; the TB350 launched with Android 12L and meets that criterion. Running a GSI newer than the installed OS additionally requires the vendor image to be fully VNDK-compliant, which must be read from the device in stage 1.
-- Two community build lines track LineageOS 23 / Android 16 and were still being updated in June 2026: the TrebleDroid-based `lineage_treble` releases (23.2 QPR2, whose release notes describe bundled VNDK support from Android 9 through Android 16) and Andy Yan's LineageOS 23 builds, which since 23.0 publish each image in an EROFS (`bgNE`) and an ext4 (`bgN4`) variant.
+- Two community build lines track LineageOS 23 / Android 16 and were still being updated in mid-2026: the TrebleDroid-based `lineage_treble` releases (23.2 QPR2, June 2026, whose release notes describe bundled VNDK support from Android 9 through Android 16) and the `MisterZtr/LineageOS_gsi` releases (23.2, 24 May 2026, published in vanilla and GApps variants with ext4 and EROFS filesystem images). Andy Yan's widely used GSI line offered LineageOS 22 / Android 15 builds but no LineageOS 23 build as of 16 August 2026.
 - The MediaTek BPF `arraymap` bug that breaks BPF-based networking under newer Android versions is documented against 4.14 and 4.19 vendor kernels, and the public patcher documents testing only on those versions. A community report places the TB350 stock kernel at `5.10.209-android12`, which if confirmed would make that specific bug unlikely to apply; see the community-reported data in [device-and-image-matrix.md](device-and-image-matrix.md). If networking fails under Android 16, prove the cause from TB350 logs rather than assuming the BPF problem.
 
-Reports from other Helio G99 devices in 2026 show Android 16 GSI results varying by image, from failing during first-time setup to working including LTE. Those results do not transfer to the TB350; each image must be validated on the tablet itself.
+Results on other MediaTek devices in 2026 are mixed. A March 2026 XDA report describes a Helio G99 phone (Infinix NOTE 30 Pro) on a `5.10.209-android12` kernel — the same kernel line reported for the TB350 — showing a permanent black screen under a TrebleDroid-based Android 16 GSI, traced by the reporter to a mismatch between the GSI display driver and the vendor device tree, while a Helio G85 phone in the same thread ran an Android 16 GSI with working telephony and Wi-Fi. Those results do not transfer to the TB350 in either direction; each image must be validated on the tablet itself.
 
 Never flash a patched boot image made for the older TB-J616X or for any other model.
 
@@ -108,6 +108,8 @@ The project should not recommend a permanent installation until all of the follo
 - [TrebleDroid GSI list](https://github.com/TrebleDroid/treble_experimentations/wiki/Generic-System-Image-%28GSI%29-list)
 - [Unofficial LineageOS 23.2 Treble GSI releases](https://github.com/Doze-off/lineage_treble/releases)
 - [Andy Yan's LineageOS GSI builds](https://sourceforge.net/projects/andyyan-gsi/)
+- [MisterZtr LineageOS GSI releases](https://github.com/MisterZtr/LineageOS_gsi/releases)
 - [MediaTek BPF kernel patcher](https://github.com/R0rt1z2/mtk-bpf-patcher)
 - [XDA thread: TB350FU unlock and GSI installation report, 21 November 2024](https://xdaforums.com/t/tb350fu-lenovo-p11-2nd-gen-how-to-unlock-install-gsi-root.4704177/)
 - [XDA thread: TB350 Android 16 custom-kernel request, 26 July 2025](https://xdaforums.com/t/closed-looking-for-developer-to-build-custom-kernel-for-android-16-gsi-on-lenovo-tab-p11-2nd-gen-tb350fu-tb350xu.4751935/)
+- [XDA thread: Android 16 GSI reports on MediaTek devices, March 2026](https://xdaforums.com/t/shared-eol-treble-gsi-a16-a-b-graphiteos.4780675/page-2)
