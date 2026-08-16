@@ -3,7 +3,7 @@
 Community research and documentation for running a more open Android system on the Lenovo Tab P11 (2nd Gen):
 
 - `TB350FU`: Wi-Fi model
-- `TB350XU`: LTE model
+- `TB350XU`: Wi-Fi + LTE model
 
 ## Current direction
 

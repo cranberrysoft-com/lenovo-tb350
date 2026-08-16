@@ -10,7 +10,7 @@ The practical first target is a vanilla LineageOS 22.2 / Android 15 GSI. A Linea
 
 ## Verified baseline
 
-The TB350FU and TB350XU are Lenovo Tab P11 (2nd Gen) variants built on the MediaTek Helio G99 platform. They launched with Android 12L. Lenovo's documented upgrade lifecycle ends at Android 14, and its published security-maintenance dates ended in 2025.
+The TB350FU and TB350XU are Lenovo Tab P11 (2nd Gen) variants built on the MediaTek Helio G99 platform. Lenovo's PSREF states that they launched with Android 12L, would receive two major OS upgrades through Android 14 and would receive three years of security upgrades. Lenovo's Upgrade Matrix lists security maintenance ending on 30 October 2025 for the TB350FU and 30 December 2025 for the TB350XU.
 
 No maintained, device-native LineageOS build for the TB350 has been verified. Available LineageOS 22.2 and 23.2 images are generic, unofficial Treble GSIs rather than official support for this tablet.
 
@@ -95,7 +95,7 @@ The project should not recommend a permanent installation until all of the follo
 ## Primary references
 
 - [Lenovo Tab P11 (2nd Gen) specifications](https://psref.lenovo.com/syspool/Sys/PDF/Lenovo_Tablets/Tab_P11_2nd_Gen/Tab_P11_2nd_Gen_Spec.PDF)
-- [Lenovo Android Upgrade Matrix](https://lenovomobilesupport.lenovo.com/us/en/products/phones/k-series/k12/solutions/ht501098-android-upgrade-matrix)
+- [Lenovo Android Upgrade Matrix](https://support.lenovo.com/us/en/solutions/ht501098)
 - [Android Generic System Image requirements](https://developer.android.com/topic/generic-system-image)
 - [Android Dynamic System Updates](https://source.android.com/docs/core/ota/dynamic-system-updates)
 - [TrebleDroid GSI list](https://github.com/TrebleDroid/treble_experimentations/wiki/Generic-System-Image-%28GSI%29-list)
