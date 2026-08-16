@@ -77,7 +77,13 @@ Create a separate, reviewed installation document containing exact commands, exp
 
 ### 5. Consider Android 16
 
-Android 16 testing follows a successful Android 15 baseline. If networking fails, first prove whether the failure is the MediaTek BPF problem on the TB350 kernel. The public MediaTek BPF patcher documents testing only on 4.14 and 4.19 kernels; that does not establish compatibility with the TB350.
+Android 16 testing follows a successful Android 15 baseline. Research recorded on 16 August 2026 indicates that the option is viable in principle, though nothing has been proven on a project device:
+
+- Google publishes official Android 16 GSIs, with stable builds through Android 16 QPR2. Google's stated baseline for any GSI is a fully Treble-compliant device that launched with Android 9 (API level 28) or later; the TB350 launched with Android 12L and meets that criterion. Running a GSI newer than the installed OS additionally requires the vendor image to be fully VNDK-compliant, which must be read from the device in stage 1.
+- Two community build lines track LineageOS 23 / Android 16 and were still being updated in June 2026: the TrebleDroid-based `lineage_treble` releases (23.2 QPR2, whose release notes describe bundled VNDK support from Android 9 through Android 16) and Andy Yan's LineageOS 23 builds, which since 23.0 publish each image in an EROFS (`bgNE`) and an ext4 (`bgN4`) variant.
+- The MediaTek BPF `arraymap` bug that breaks BPF-based networking under newer Android versions is documented against 4.14 and 4.19 vendor kernels, and the public patcher documents testing only on those versions. A community report places the TB350 stock kernel at `5.10.209-android12`, which if confirmed would make that specific bug unlikely to apply; see the community-reported data in [device-and-image-matrix.md](device-and-image-matrix.md). If networking fails under Android 16, prove the cause from TB350 logs rather than assuming the BPF problem.
+
+Reports from other Helio G99 devices in 2026 show Android 16 GSI results varying by image, from failing during first-time setup to working including LTE. Those results do not transfer to the TB350; each image must be validated on the tablet itself.
 
 Never flash a patched boot image made for the older TB-J616X or for any other model.
 
@@ -97,7 +103,11 @@ The project should not recommend a permanent installation until all of the follo
 - [Lenovo Tab P11 (2nd Gen) specifications](https://psref.lenovo.com/syspool/Sys/PDF/Lenovo_Tablets/Tab_P11_2nd_Gen/Tab_P11_2nd_Gen_Spec.PDF)
 - [Lenovo Android Upgrade Matrix](https://support.lenovo.com/us/en/solutions/ht501098)
 - [Android Generic System Image requirements](https://developer.android.com/topic/generic-system-image)
+- [Google GSI release notes](https://developer.android.com/topic/generic-system-image/releases)
 - [Android Dynamic System Updates](https://source.android.com/docs/core/ota/dynamic-system-updates)
 - [TrebleDroid GSI list](https://github.com/TrebleDroid/treble_experimentations/wiki/Generic-System-Image-%28GSI%29-list)
 - [Unofficial LineageOS 23.2 Treble GSI releases](https://github.com/Doze-off/lineage_treble/releases)
+- [Andy Yan's LineageOS GSI builds](https://sourceforge.net/projects/andyyan-gsi/)
 - [MediaTek BPF kernel patcher](https://github.com/R0rt1z2/mtk-bpf-patcher)
+- [XDA thread: TB350FU unlock and GSI installation report, 21 November 2024](https://xdaforums.com/t/tb350fu-lenovo-p11-2nd-gen-how-to-unlock-install-gsi-root.4704177/)
+- [XDA thread: TB350 Android 16 custom-kernel request, 26 July 2025](https://xdaforums.com/t/closed-looking-for-developer-to-build-custom-kernel-for-android-16-gsi-on-lenovo-tab-p11-2nd-gen-tb350fu-tb350xu.4751935/)
